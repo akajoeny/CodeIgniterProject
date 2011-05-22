@@ -1,0 +1,2 @@
+serviceClass: micke2.client.MyService
+path: 15AF9691F4913252F6ED47416E560577.gwt.rpc

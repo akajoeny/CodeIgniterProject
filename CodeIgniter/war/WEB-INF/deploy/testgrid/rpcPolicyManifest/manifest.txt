@@ -1,0 +1,3 @@
+# Module testgrid
+# RPC service class, partial path of RPC policy file
+micke2.client.MyService, 15AF9691F4913252F6ED47416E560577.gwt.rpc

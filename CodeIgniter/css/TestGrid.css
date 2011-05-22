@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+.dragdrop-dropTarget-engage {
+  background-color: #E0E8FF;
+}
+
+.getting-started-label {
+  border: 1px solid #99AACC;
+  background-color: #AACCFF;
+  padding: 20px;
+}
+
+.getting-started-outer {
+  border: 1px solid blue;
+  margin: 10px;
+}
+
+.getting-started-inner {
+  /*border: 1px solid blue;*/
+  margin: 10px;
+}
+
+.getting-started-inner2 {
+  border: 1px solid blue;
+  margin: 10px;
+}
+
+.button-panel{
+	boarder: 10px;
+}
