@@ -43,7 +43,8 @@ class Start extends CI_Controller {
 	public function GamePage()
 	{
 		$data['main_content'] = 'game';
-		$this->load->view('template_view', $data);	
+		$this->load->view('template_view', $data);
+		//$this->load->library('ajax');
 	}
 	
 	public function AboutUs()
@@ -62,8 +63,8 @@ class Start extends CI_Controller {
 	
 	public function play()
 	{
-
-		$this->load->view('test/index.php');
+		redirect('http://www-und.ida.liu.se/~mikkl381/test/');
+		//$this->load->view('test/index.php');
 	}
 	
 	public function userupdate()
