@@ -62,8 +62,8 @@ class Start extends CI_Controller {
 	
 	public function play()
 	{
-		$this->load->library('ajax');
-		$this->load->view('war/TestGrid.html');
+
+		$this->load->view('test/index.php');
 	}
 	
 	public function userupdate()
