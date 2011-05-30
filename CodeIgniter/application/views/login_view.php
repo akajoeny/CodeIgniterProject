@@ -26,13 +26,11 @@
 			</li>
 	</ul>	
 </div> 
-
-<br> </br> 	
-	<div class="openid_form">
+<br> 	
+<div class="openid_form">
 	<?php if($show){
 		$this->load->view('openid_form');} ?>
-	</div>
+</div>
 
-	<?php //echo $this->load->view('footer'); ?>
-</body>
-</html>
+		<?php //echo $this->load->view('footer'); ?>
+		

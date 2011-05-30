@@ -1152,7 +1152,7 @@ class Gmap {
 	 * @param string $icon_shadow_filename Web file location (eg http://somesite/someicon.gif) to use for icon shadow
 	 * @return int|bool
 	 */
-	function addMarkerByAddress($address,$title = '',$html = '',$tooltip = '', $icon_filename = '', $icon_shadow_filename='') {
+	function addMarkerByAddress($address, $title = '',$html = '',$tooltip = '', $icon_filename = '', $icon_shadow_filename='') {
 		if(($_geocode = $this->getGeocode($address)) === false)
 			return false;
 		return $this->addMarkerByCoords($_geocode['lon'],$_geocode['lat'],$title,$html,$tooltip, $icon_filename, $icon_shadow_filename);

@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 		$this->load->helper(array('language'));
 		$this->load->model(array('account_model', 'account_details_model'));
 		
-		$this->third_party_auth_providers = array('google', 'yahoo', 'openid');
+		$this->third_party_auth_providers = array('google', 'yahoo', 'openid', 'facebook');
 		$this->userdata = array('Username', 'First name', 'Last name', 'Country', 'City');
 		
     }

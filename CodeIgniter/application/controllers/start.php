@@ -103,13 +103,11 @@ class Start extends CI_Controller {
     	$country = $this->account_details_model->get_country($account_id);
     	$address = $city . ' , ' .  $country;
     	
-    	
-		
     	$this->load->library('GMap');
     	$this->gmap->GoogleMapAPI();
 		//valid types are hybrid, satellite, terrain, map
 		$this->gmap->setMapType('hybrid');
-		$this->gmap->addMarkerByAddress($address, "You Live Here", $address);
+		$this->gmap->addMarkerByAddress($address, 'You live here', $address);
 		$geocode = $this->gmap->getGeoCode($address);
 		
 		if ($all = "all")
@@ -120,9 +118,10 @@ class Start extends CI_Controller {
 	    		$city = $this->account_details_model->get_city($i);
 	    		$country = $this->account_details_model->get_country($i);
 	    		$address = $city . ' , ' .  $country;
-	    		$this->gmap->addMarkerByAddress($address, "Some user", $address );
+	    		$this->gmap->addMarkerByAddress($address, 'Some user', $address);
 			}
 		}
+		
 		
 		$this->gmap->enableInfoWindow();
 		$this->gmap->setInfoWindowTrigger('click');
@@ -130,8 +129,8 @@ class Start extends CI_Controller {
 		$this->gmap->setZoomLevel(4);
 		$this->gmap->setWidth(800);
 		$this->gmap->setHeight(400);
-		$this->gmap->setCenterCoords($geocode['lon'],$geocode['lat']);
-		$this->gmap->adjustCenterCoords($geocode['lon'],$geocode['lat']);
+		$this->gmap->setCenterCoords($geocode['lon'], $geocode['lat']);
+		//$this->gmap->adjustCenterCoords($geocode['lon'],$geocode['lat']);
 		$data['headerjs'] = $this->gmap->getHeaderJS();
 		$data['headermap'] = $this->gmap->getMapJS();
 		$data['onload'] = $this->gmap->printOnLoad();

@@ -263,6 +263,18 @@ class Account_model extends CI_Model {
 		$this->db->update('a3m_account', array('suspendedon' => NULL), array('id' => $account_id));
 	}
 	
+	/**
+	 * Update account signedin
+	 *
+	 * @access public
+	 * @param bool $value, int $account_id
+	 * @return void
+	 */
+	function set_signedin($value, $account_id)
+	{
+		$this->db->update('a3m_account', array('signedin' => $value), array('id' => $account_id));
+	}
+	
 }
 
 
