@@ -8,9 +8,12 @@
 	
 </head>
 <body>
+<div class="loginbox">
+<h5> Welcome </h5>
+<br></br>
+<h6>Login with...</h6>
 	<ul>
 			<li>
-		        <div class="loginbox">
 	            	<ul>
 	                <?php foreach($third_party_auth_providers as $provider) : ?>
 	                	<li class="third_party <?php echo $provider; ?>">
@@ -19,13 +22,17 @@
 	                <?php endforeach; ?>
 			        </ul>
 					<div class="clear"></div>
-					</div>        
+					      
 			</li>
-	</ul>
+	</ul>	
+</div> 
+
+<br> </br> 	
 	<div class="openid_form">
 	<?php if($show){
 		$this->load->view('openid_form');} ?>
 	</div>
-	<?php echo $this->load->view('footer'); ?>
+
+	<?php //echo $this->load->view('footer'); ?>
 </body>
 </html>
