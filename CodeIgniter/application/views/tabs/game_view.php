@@ -12,3 +12,14 @@
 <br>
 <br>
 <br>
+<ul>
+<li>Users Online:</li>
+<?php foreach ($users as $user): ?>
+	<li><?php echo $user;?>
+	</li>
+<?php endforeach;?>
+</ul>
+
+<br>
+<br>
+<br>

@@ -40,6 +40,7 @@
 <br>
 <br>
 <br>
+<p> Logged in users </p>
 	    <div id="messages">
 	        <div class="msg old">
 	            BargePoll message requester!

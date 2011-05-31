@@ -10,23 +10,31 @@ function addmsg(type, msg){
 	            "<div class='msg "+ type +"'>"+ msg +"</div>"
 	        );
 	    }
+function printuser(type, user){
+			$("#messages").replaceWith(
+					"<div class='msg "+ type +"'>"+ user +"<br></div>"
+			);
+	
+}
 
 	    function waitForMsg(){
 	        /* This requests the url "msgsrv.php"
 	        When it complete (or errors)*/
 	        $.ajax({
 	            type: "GET",
-	            url: "http://localhost/CodeIgniterProject/CodeIgniter/jstest/test",
+	            url: "http://localhost/CodeIgniterProject/CodeIgniter/jstest/loggedinusers",
 
 	            async: true, /* If set to non-async, browser shows page as "Loading.."*/
 	            cache: false,
 	            timeout:50000, /* Timeout in ms */
 
 	            success: function(data){ /* called when request to barge.php completes */
-	                addmsg("new", data); /* Add response to a .msg div (with the "new" class)*/
+	                //Break out users from data...
+	            	printuser("new", data);
+	            	//addmsg("new", data[i]['username']); /* Add response to a .msg div (with the "new" class)*/            	
 	                setTimeout(
 	                    'waitForMsg()', /* Request next message */
-	                    1000 /* ..after 1 seconds */
+	                    10000 /* ..after 10 seconds */
 	                );
 	            },
 	            error: function(XMLHttpRequest, textStatus, errorThrown){

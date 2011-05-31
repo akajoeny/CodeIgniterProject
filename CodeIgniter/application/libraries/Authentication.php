@@ -44,10 +44,11 @@ class Authentication {
 		
 		$this->CI->session->set_userdata('account_id', $account_id);
 		
+		$value = 1;
 		
 		$this->CI->load->model('account_model');
 		$this->CI->account_model->update_last_signed_in_datetime($account_id);
-		$this->CI->account_model->set_signedin(TRUE, $account_id);
+		$this->CI->account_model->set_signedin($value , $account_id);
 		
 		// Redirect signed in user with session redirect
 		if ($redirect = $this->CI->session->userdata('sign_in_redirect')) 
@@ -75,7 +76,7 @@ class Authentication {
 	function sign_out()
 	{
 		$this->CI->session->unset_userdata('account_id');
-		$this->CI->account_model->set_signedin(FALSE, $account_id);
+		$this->CI->account_model->set_signedin( 0 , $account_id);
 	}
 	
 	// --------------------------------------------------------------------

@@ -272,7 +272,24 @@ class Account_model extends CI_Model {
 	 */
 	function set_signedin($value, $account_id)
 	{
-		$this->db->update('a3m_account', array('signedin' => $value), array('id' => $account_id));
+		$this->db->update('a3m_account', array('signedin' => $value), array('email' => $account_id));
+	}
+	
+	function loggedinusers()
+	{
+		
+		$query = $this->db->get_where('a3m_account', array('signedin' => 1));
+		$i = 0;
+		$data = Array();
+		
+ 		foreach ($query->result() as $row)
+		{
+		    $data[$i] = $row->username;
+		    $i = $i + 1;
+		}
+		
+		return $data;
+		
 	}
 	
 }

@@ -43,6 +43,9 @@ class Start extends CI_Controller {
 	public function GamePage()
 	{
 		$data['main_content'] = 'game';
+		
+		$data['users'] = $this->account_model->loggedinusers();
+		
 		$this->load->view('template_view', $data);
 		//$this->load->library('ajax');
 	}
