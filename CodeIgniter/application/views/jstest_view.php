@@ -45,6 +45,7 @@
 	        <div class="msg old">
 	            BargePoll message requester!
 	        </div>
+	        <div id="usersonline"></div>
 	    </div>
 
 </body>

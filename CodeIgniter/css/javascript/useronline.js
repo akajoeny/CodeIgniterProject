@@ -11,8 +11,8 @@ function addmsg(type, msg){
 	        );
 	    }
 function printuser(type, user){
-			$("#messages").replaceWith(
-					"<div class='msg "+ type +"'>"+ user +"<br></div>"
+			$("#usersonline").replaceWith(
+					"<div class='"+ type +"'>"+ user +"</div></div>"
 			);
 	
 }
@@ -30,7 +30,7 @@ function printuser(type, user){
 
 	            success: function(data){ /* called when request to barge.php completes */
 	                //Break out users from data...
-	            	printuser("new", data);
+	            	printuser("usersonline", data);
 	            	//addmsg("new", data[i]['username']); /* Add response to a .msg div (with the "new" class)*/            	
 	                setTimeout(
 	                    'waitForMsg()', /* Request next message */

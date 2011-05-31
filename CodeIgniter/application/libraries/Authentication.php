@@ -75,8 +75,9 @@ class Authentication {
 	 */
 	function sign_out()
 	{
-		$this->CI->session->unset_userdata('account_id');
+		$account_id = $this->CI->session->userdata('account_id');
 		$this->CI->account_model->set_signedin( 0 , $account_id);
+		$this->CI->session->unset_userdata('account_id');
 	}
 	
 	// --------------------------------------------------------------------

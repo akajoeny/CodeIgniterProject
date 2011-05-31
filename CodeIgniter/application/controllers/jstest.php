@@ -39,8 +39,17 @@ class Jstest extends CI_Controller {
 	
 	public function loggedinusers()
 	{
+		if(rand(1,3) == 1)
+		{
+    		/* Fake an error */
+    		header("HTTP/1.0 404 Not Found");
+    		die();
+		}
+		else
+		{
 		$this->load->model('account_model');
 		
+		$temp['users'] = "";
 		$temp['users'] = $this->account_model->loggedinusers();
 		
 		//$i = 0;
@@ -50,7 +59,10 @@ class Jstest extends CI_Controller {
 		
 		foreach ($temp['users'] as $user)
 		{
-			echo $user;
+			$data = $data . " <br> " . $user;
+		}
+		
+		echo $data;
 		}
 	}
 	
