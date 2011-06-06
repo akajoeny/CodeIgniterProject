@@ -5,6 +5,8 @@
 
 	<base href="<?php echo base_url(); ?>" />
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="css/javascript/jquery-1.6.1.js" type="text/javascript"></script>
+	<script src="css/javascript/useronline.js" type="text/javascript"></script>
 	
 	<title>Main Page</title>
 </head>

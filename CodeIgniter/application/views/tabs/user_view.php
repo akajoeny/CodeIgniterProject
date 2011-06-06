@@ -4,7 +4,6 @@
 <br />
 
 <div class="container10">
-<div id="Userpage"> <?php //echo $this->session->userdata('account_id'); ?> <br>  
 
 <?php echo form_open('start/userupdate'); ?>
 	<ul>
@@ -23,7 +22,5 @@
 	</ul>
 	
 <?php echo form_close(); ?>
-<br />
-</div>
 <br />
 </div>
