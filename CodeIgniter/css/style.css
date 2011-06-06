@@ -23,6 +23,8 @@ div.container41   { display: block; margin-left: auto; margin-right: auto; margi
 div.gameboard     { display: block; margin-left: auto; margin-right: auto; margin-top: 20px;    background-color: black; height: 100px; width: 100px; color: white;}
 #users            { display: block; background-color: black;}
 
+div.container50   { display: block; margin-left: auto; margin-right: auto; margin-top: 50px; background-color: black; height: 250px; width: 200px; color:white;}
+p.developers {text-align:center;}
 
 ul { list-style:none; }
 ul#usersonline { list-style:none; background-color:black;}
