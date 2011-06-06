@@ -10,7 +10,7 @@
 <body>
 <div class="loginbox">
 <h5> Welcome </h5>
-<br></br>
+<br />
 <h6>Login with...</h6>
 	<ul>
 			<li>
@@ -26,11 +26,8 @@
 			</li>
 	</ul>	
 </div> 
-<br> 	
+<br /> 	
 <div class="openid_form">
 	<?php if($show){
 		$this->load->view('openid_form');} ?>
 </div>
-
-		<?php //echo $this->load->view('footer'); ?>
-		

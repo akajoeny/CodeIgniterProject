@@ -1,25 +1,33 @@
-<?php echo 'Game Page' ?>
-
 <head>
 <script src="<?php echo base_url(); ?>css/javascript/jquery-1.6.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>css/javascript/useronline.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>css/javascript/userlist.js" type="text/javascript"></script>
 </head>
+<div class="container40">
+<?php //echo anchor('start/play', 'Game', 'Game'); ?>
+<br />
+<div class="container41">
+<div class="gameboard">
+	<?php $atts = array(
+               'width'      => '200',
+               'height'     => '200',
+               'scrollbars' => 'no',
+               'status'     => 'yes',
+               'resizable'  => 'no',
+               'screenx'    => '200',
+               'screeny'    => '100'
+             );
 
-<br>
+	echo anchor_popup('game/gameboard', 'Create Gameboard!', $atts); ?>
+</div>
+ 
+<h5> Logged in users </h5>
 
-	<?php echo anchor('start/play', 'Game', 'Game'); ?>
-
-<br>
-<br>
-<br>
-<ul>
-<li>Users Online:</li>
-<?php foreach ($users as $user): ?>
-	<li><?php echo $user;?>
-	</li>
-<?php endforeach;?>
-</ul>
-
-<br>
-<br>
-<br>
+<div id="users">
+<ul id="usersonline"></ul>	   
+</div>
+</div>
+<br />
+<br />
+<br />
+</div>

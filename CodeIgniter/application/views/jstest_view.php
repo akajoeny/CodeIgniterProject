@@ -1,53 +1,22 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<base href="<?php echo base_url(); ?>" />
-<script src="<?php echo base_url(); ?>css/javascript/jquery-1.6.1.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>css/javascript/myfirstscript.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>css/javascript/useronline.js" type="text/javascript"></script>
-<title>My first Javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="css/javascript/jquery-1.6.1.js" type="text/javascript"></script>
+<script src="css/javascript/useronline.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<title>Users online Javascript</title>
 </head>
 <body>
 
-<?php echo form_open('jstest/test'); ?>
-	
-		<ul>
-		<li>
-		<label>Username</label>
-		<div>
-		<?php echo form_input(array('id' => 'username', 'name' => 'username')); ?>
-		</div>
-		</li>
-		
-		<li>
-		<label>Another Field</label>
-		<div>
-		<?php echo form_input(array('id' => 'anotherfield', 'name' => 'anotherfield')); ?>
-		</div>
-		</li>
-		
-		<li>
-		<?php echo validation_errors(); ?>
-		</li>
-	
-		<li>
-		<?php echo form_submit(array('name' => 'submit'), 'Test'); ?>
-		</li>
-		</ul>
-	
-<?php echo form_close(); ?>
-
-
-<br>
-<br>
-<br>
+<br />
+<br />
 <p> Logged in users </p>
-	    <div id="messages">
-	        <div class="msg old">
-	            BargePoll message requester!
-	        </div>
-	        <div id="usersonline"></div>
-	    </div>
 
+<div id="users">
+<ul id="usersonline"></ul>	   
+
+</div>
 </body>
-
 </html>

@@ -24,13 +24,67 @@ class Start extends CI_Controller {
 		
     }
     
-	public function index() 
+	public function index()
 	{
-		$data = $this->google("all");
 		$data['main_content'] = 'main';
-		$this->load->view('template_view', $data);
-	
-	}
+		
+		$news = '';
+		$target_url = "http://svt.se/svttext/web/pages/300.html";
+		$userAgent = 'Googlebot/2.1 (http://www.googlebot.com/bot.html)';
+
+		// make the cURL request to $target_url
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_USERAGENT, $userAgent);
+		curl_setopt($curl, CURLOPT_URL,$target_url);
+		curl_setopt($curl, CURLOPT_FAILONERROR, true);
+		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($curl, CURLOPT_AUTOREFERER, true);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+		$html= curl_exec($curl);
+		if (!$html) {
+			echo "<br />cURL error number:" .curl_errno($curl);
+			echo "<br />cURL error:" . curl_error($curl);
+			exit;
+		}
+		
+		// parse the html into a DOMDocument
+		$dom = new DOMDocument();
+		@$dom->loadHTML($html);
+		
+		// grab all the on the page
+		$xpath = new DOMXpath($dom);
+
+		// For everything with class = W
+		$elements = $xpath->query("//*[@class='W']");
+		
+		if (!is_null($elements)) 
+		{
+			$length = $elements->length;
+			foreach ($elements as $element) 
+			{
+	    		$string = $element->nodeValue;
+	    		
+	    		$firstdot = strpos($string, '.');
+	    		if ($firstdot != null && $firstdot > 3)
+	    		{
+		    		$headline = substr($string, 0, $firstdot);
+		    		$news = $news . $headline .  '<br />';
+		    	}elseif ($firstdot < 3 && $firstdot != null)
+		    	{
+		    		$string = substr($string, 4);
+		    		$enddot = strpos($string, '.');
+		    		if ($enddot != null && $enddot > 3)
+	    			{
+		    			$headline = substr($string, 0, $enddot);
+		    			$news = $news . $headline .  '<br />';
+		    		}
+		    	}
+   			}
+		}
+ 		$data['texttvnews'] = $news;
+ 		$this->load->view('template_view', $data);		
+	}	
 	
 	public function UserPage()
 	{
@@ -94,12 +148,6 @@ class Start extends CI_Controller {
 
 	public function google($all)
     {
-    	echo file_exists('GMap.php');
-		
-    	//function addMarkerByAddress($address,$title = '',$html = '',$tooltip = '', 
-    	//								$icon_filename = '', $icon_shadow_filename='') {
-    	
-    	
 		$account_email = $this->session->userdata['account_id'];
 		$account_id = $this->account_model->get_account_id($account_email);
     	$city = $this->account_details_model->get_city($account_id);

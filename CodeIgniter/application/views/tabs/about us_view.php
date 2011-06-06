@@ -1,4 +1,6 @@
+<div class="container10">
 <?php echo 'About Us' ?>
-<br>
+<br />
 <?php echo $this->calendar->generate();?>
-<br>
+<br />
+</div>

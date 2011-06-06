@@ -14,7 +14,7 @@ $datanew['image_properties'] = array(
 											);
 
 $datanew['time'] = unix_to_human($now, FALSE, 'eu');
-$datanew['tabs'] = array( 1 => 'User Page', 2 => 'Game Page', 3 => 'About Us');
+$datanew['tabs'] = array( 1 => 'User Page', 2 => 'Game Page', 3 => 'About Us', 4 => 'Map Game');
 
 $this->load->view('includes/header_view', $datanew);
 $this->load->view('tabs/' . $main_content . '_view');
